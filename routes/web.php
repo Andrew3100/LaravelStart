@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/students', function () {
+    return view('students');
+});
 
+Route::get('/parents', function () {
+    return view('parents');
+});
+
+Route::get('/personal', function () {
+    return view('personal');
+});
+
+
+Auth::routes();
+/*Выход из системы*/
+Route::get('/logout', [App\Http\Controllers\YourController::class, 'logout']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
